@@ -1,0 +1,13 @@
+
+
+.question-container {
+    display: grid;
+    place-items: center;
+    width: 90%;
+    height: 70%;
+    background-color: #FFF;
+}
+
+.question-container p {
+    text-align: center;
+}

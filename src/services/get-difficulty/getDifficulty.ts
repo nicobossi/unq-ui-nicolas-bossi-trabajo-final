@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_DIFFICULTY } from "../url/difficulty";
+import { GET_DIFFICULTY } from "../urls";
 import createDifficulties from "../../utils/createDifficulties";
 import type { Difficulties } from "../../types/Difficulties";
 
