@@ -5,6 +5,7 @@ import type { Level } from "../../types/Level";
 import QuestionContainer from "../../components/question-container/QuestionContainer";
 import OptionsList from "../../components/options-list/OptionsList";
 import './question-game.css'
+import CountContainer from "../../components/count-container/CountContainer";
 
 
 const QuestionGame = () => {
@@ -25,6 +26,9 @@ const QuestionGame = () => {
 
     return (
         <section className = "question-game_container">
+            <CountContainer 
+            currentCount = {countResponse} 
+            total = {levels.length}/>
             <QuestionContainer 
                 question = {levels[countResponse].question} />
             <OptionsList 
