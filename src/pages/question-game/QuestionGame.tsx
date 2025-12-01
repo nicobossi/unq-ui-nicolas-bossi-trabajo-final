@@ -1,30 +1,22 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import getLevels from "../../services/get-levels/getLevels";
-import type { Level } from "../../types/Level";
-import QuestionContainer from "../../components/question-container/QuestionContainer";
-import OptionsList from "../../components/options-list/OptionsList";
-import './question-game.css'
-import CountContainer from "../../components/count-container/CountContainer";
-import { INDEX } from "../../routes";
+import { useState } from "react";
+import CountContainer from "../../components/count-container/CountContainer"
+import OptionsList from "../../components/options-list/OptionsList"
+import QuestionContainer from "../../components/question-container/QuestionContainer"
 import { useNavigate } from "react-router-dom";
-import type { Answer } from "../../types/Answer";
+import { INDEX } from "../../routes";
 import postAnswer from "../../services/post-answer/postAnswer";
+import type { Answer } from "../../types/Answer";
+import type { QuestionGameProperty } from "../../types/QuestionGameProperty";
 
-const QuestionGame = () => {
-    const { difficulty } = useParams();
-    const [levels, setLevels] = useState<Level[]>([]);
+
+
+const QuestionGame = ({levels} : QuestionGameProperty) => {
+    
     const [countResponse, setCountResponse] = useState<number>(0);
     const navigate = useNavigate();
 
-    useEffect(() => {
-        const get = async () => setLevels(await getLevels(difficulty));
-        get();
-    }, []);
-
     const handleAnswer = async (option : string) => {
         const answer : Answer = await postAnswer(option, levels[countResponse].id);
-        console.log(answer);
         
         if(answer.isCorrect) {
             setCountResponse(countResponse + 1);
@@ -33,8 +25,6 @@ const QuestionGame = () => {
             navigate(INDEX);
         } 
     }
-
-    if (levels.length === 0) {return <p>Cargando...</p>}
 
     return (
         <section className = "question-game_container">
