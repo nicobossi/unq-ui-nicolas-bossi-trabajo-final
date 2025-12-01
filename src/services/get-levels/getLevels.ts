@@ -4,7 +4,7 @@ import type { Level } from "../../types/Level";
 import createLevels from "../../utils/createLevels";
 import type { LevelAPI } from "../../types/LevelAPI";
 
-const getLevels = async (difficulty: string | undefined) : Promise<Array<Level>> => {
+const getLevels = async (difficulty: string | undefined) : Promise<Level[]> => {
     try {
         const response = await axios.get<LevelAPI[]>(GET_LEVELS, {params: { difficulty } });
         return createLevels(response.data);
