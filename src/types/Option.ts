@@ -2,5 +2,6 @@
 
 
 export type Option = {
-    answer: string
+    answer: string,
+    answerNumber: string
 }

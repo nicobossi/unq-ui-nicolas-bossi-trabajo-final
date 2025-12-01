@@ -7,7 +7,24 @@ const createLevels = (levels: LevelAPI[]) : Level[] => {
         return { 
             id: level.id,
             question: level.question, 
-            options: [level.option1, level.option2, level.option3, level.option4]
+            options: [
+                {
+                    answer: level.option1, 
+                    answerNumber: "option1"
+                },
+                {
+                    answer: level.option2, 
+                    answerNumber: "option2"
+                }, 
+                {
+                    answer: level.option3, 
+                    answerNumber: "option3"
+                },
+                {
+                    answer: level.option4, 
+                    answerNumber: "option4"
+                }
+            ]
         };
     });
     return levelas;

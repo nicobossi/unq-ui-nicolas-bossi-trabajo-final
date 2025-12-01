@@ -7,9 +7,9 @@ const OptionsList = ({options, event} : OptionsListProperty) => {
         <div className = "option-list_container">
             {options.map(option => 
             <button 
-            key = {option}
-            onClick = {() => event(option)}>
-                {option}
+                key = {option.answerNumber}
+                onClick = {() => event(option.answerNumber)}>
+                {option.answer}
             </button>)}
         </div>
     );
