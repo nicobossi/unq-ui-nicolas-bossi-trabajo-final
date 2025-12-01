@@ -4,16 +4,17 @@
     display: grid;
     place-items: center;
     width: 100%;
+    max-width: 520px;
     height: 100%;
     background-color: none;
 }
 
 .difficulty-button_container button {
     border: none;
-    background-color: none;
     font-size: 28px;
     width: 100%;
     height: 100%;
+    background-color: #FFF;
 }
 
 .difficulty-button_container:hover {
