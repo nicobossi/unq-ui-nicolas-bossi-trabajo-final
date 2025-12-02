@@ -21,10 +21,11 @@
     font-weight: 600;
     letter-spacing: 1px;
     background-color: inherit;
+    cursor: pointer;
 }
 
 .difficulty-button_container:hover {
     transform: translateY(-4px);
-    background-color: #fefefe;
+    background: linear-gradient(135deg, #FFD700, #FFB84D, #FFF1B0);
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }

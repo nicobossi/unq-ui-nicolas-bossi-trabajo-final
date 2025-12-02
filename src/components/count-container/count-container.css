@@ -20,7 +20,8 @@
 
 @media screen and (min-width: 768px){
     .count-container {
-        background: linear-gradient(135deg, #FFD700, #FFB84D, #FFF1B0);
+        background: linear-gradient(135deg, #176fc8, #1E90FF, #87CEFA);
+
     }
     
 }

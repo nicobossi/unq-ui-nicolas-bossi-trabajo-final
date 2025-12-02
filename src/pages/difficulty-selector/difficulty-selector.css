@@ -7,6 +7,18 @@
     align-items: center;
     width: 100vw;
     height: 100vh;
+    background: linear-gradient(135deg, #FFD700, #FFB84D, #FFF1B0);
+}
+
+.difficulty-selector_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
 .difficulty-selector_title-container {
@@ -22,6 +34,11 @@
     height: 80%;
     padding: 20px;
     border-radius: 16px;
-    background: linear-gradient(135deg, #FFD700, #FFB84D, #FFF1B0);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    background-color: #FFF;
+}
+
+@media screen and (min-width: 768px) { 
+    .difficulty-selector_container {
+        background-color: #FFF;
+    }
 }

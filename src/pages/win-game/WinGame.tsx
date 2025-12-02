@@ -1,15 +1,15 @@
-import { Link } from 'react-router-dom';
-import { INDEX } from '../../routes';
 import './win-game.css'
+import ReintentMessage from '../../components/reintent-message/ReintentMessge';
 
 
 const WinGame = () => {
     return (
         <section className = "win-game">
             <div className = "win-game_container">
-                <h2>!Felicidades¡</h2>
-                <p>¿Quieres intentarlo de nuevo?</p>
-                <Link to={INDEX}>Iniciar partida</Link>
+                <div className = "win-title_container">
+                    <h2>¡Felicidades, ganaste!</h2>
+                </div>
+                <ReintentMessage />
             </div>
         </section>
     )
