@@ -6,13 +6,20 @@
     justify-content: space-evenly;
     align-items: center;
     width: 90%;
-    height: 70%;
+    height: 80%;
+    border-radius: 10px;
 }
 
 .option-list_container button {
-    width: 100%;
+    width: 90%;
     height: 40px;
+    font-size: 20px;
     border-radius: 10px;
     border-style: none;
     background-color: #FFF;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.option-list_container button:hover {
+    cursor: pointer;
 }

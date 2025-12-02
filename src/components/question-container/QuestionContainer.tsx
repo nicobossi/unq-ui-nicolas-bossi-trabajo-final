@@ -5,8 +5,9 @@ const QuestionContainer = ({question, answer} : QuestionContainerProperty) => {
 
     return (
         <div className = "question-container">
-            <p className = {answer ? "invisible" : "question_content"}>{question}</p>
-            <p className = {answer ? "answer_content" : "invisible"}>{answer}</p>
+            {answer ? 
+                <p className = "answer_content active">{answer}</p> :
+                <p className = "question_content active">{question}</p>}
         </div>
     );
 }
