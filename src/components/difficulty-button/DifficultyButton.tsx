@@ -2,11 +2,10 @@ import type { DifficultyButtonProperty } from "../../types/DifficultyButtonPrope
 import './difficulty-button.css';
 
 
-const DifficultyButton = ({name, color, event} : DifficultyButtonProperty) => {
+const DifficultyButton = ({name, event} : DifficultyButtonProperty) => {
     return (
         <div 
-        className = "difficulty-button_container"
-        style={{backgroundColor: color}}>
+        className = "difficulty-button_container">
             <button onClick = {() => event(name)}>{name}</button>
         </div>
     )

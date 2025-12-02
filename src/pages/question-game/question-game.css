@@ -1,0 +1,41 @@
+
+
+.question-game_container {
+    display: grid;
+    place-items: center;
+    grid-template-rows: 20% 80%;
+    margin: 0 auto;
+    width: 100vw;
+    max-width: 400px;
+    height: 100vh;
+    background: linear-gradient(135deg, #FFD700, #FFB84D, #FFF1B0);
+}
+
+.counter_container {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.game-form_container {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (min-width: 768px){
+    .question-game_container {
+        display: flex;
+        position: relative;
+    }
+    .counter_container {
+        position: absolute;
+        width: 94%;
+        height: 10%;
+        top: 2%;
+        left: 100%;
+    }
+    
+}
