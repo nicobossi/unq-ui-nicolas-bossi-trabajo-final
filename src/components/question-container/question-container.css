@@ -12,6 +12,6 @@
     text-align: center;
 }
 
-.question_content_invisible, .answer_content_invisible {
+.invisible {
     display: none;
 }

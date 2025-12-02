@@ -7,7 +7,7 @@ import useAnswers from "../../hooks/useAnswers";
 
 const QuestionGame = ({levels} : QuestionGameProperty) => {
     
-    const { counter, answerIntent, handleCounter } = useAnswers(levels);
+    const { counter, answer, handleCounter } = useAnswers(levels);
 
     return (
         <section className = "question-game_container">
@@ -16,7 +16,7 @@ const QuestionGame = ({levels} : QuestionGameProperty) => {
                 total = {levels.length} />
             <QuestionContainer 
                 question = {levels[counter].question} 
-                answer = {answerIntent} />
+                answer = {answer} />
             <OptionsList 
                 options = {levels[counter].options} 
                 event = {handleCounter} />
