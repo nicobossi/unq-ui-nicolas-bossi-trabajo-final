@@ -24,11 +24,14 @@ const DifficultySelector = () => {
 
     return (
         <section className = "difficulty-selector">
-            <div className = "difficulty-selector_container">
-                <DifficultyButton name = {difficulties?.option1} color = "#FFD700" event = {handleDifficultySelector} />
-                <DifficultyButton name = {difficulties?.option2} color = "#1E90FF" event = {handleDifficultySelector} />
-                <DifficultyButton name = {difficulties?.option3} color = "#00A86B" event = {handleDifficultySelector} />
-                <DifficultyButton name = {difficulties?.option4} color = "#FF4500" event = {handleDifficultySelector} />
+            <div className = "difficulty-selector_title-container">
+                <h1>Preguntados</h1>
+            </div>
+            <div className = "difficulty-selector_options">
+                <DifficultyButton name = {difficulties?.option1} event = {handleDifficultySelector} />
+                <DifficultyButton name = {difficulties?.option2} event = {handleDifficultySelector} />
+                <DifficultyButton name = {difficulties?.option3} event = {handleDifficultySelector} />
+                <DifficultyButton name = {difficulties?.option4} event = {handleDifficultySelector} />
             </div>
         </section>
     )

@@ -12,15 +12,19 @@ const QuestionGame = ({levels} : QuestionGameProperty) => {
 
     return (
         <section className = "question-game_container">
-            <CountContainer 
+            <div className = "counter_container">
+                <CountContainer 
                 currentCount = {counter} 
                 total = {levels.length} />
-            <QuestionContainer 
+            </div>
+            <div className = "game-form_container">
+                <QuestionContainer 
                 question = {levels[counter].question} 
                 answer = {answer} />
-            <OptionsList 
+                <OptionsList 
                 options = {levels[counter].options} 
                 event = {handleCounter} />
+            </div>
         </section>
     )
 }
