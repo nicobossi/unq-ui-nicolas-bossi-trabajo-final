@@ -8,6 +8,10 @@
     background-color: #FFF;
 }
 
-.question-container p {
+.question-container .question_content {
     text-align: center;
+}
+
+.question_content_invisible, .answer_content_invisible {
+    display: none;
 }

@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { INDEX, QUESTION_GAME_PARAMS } from "./routes"
 import DifficultySelector from "./pages/difficulty-selector/DifficultySelector"
-import QuestionGame from "./pages/question-game/QuestionGame"
+import InitGame from "./pages/init-game/InitGame"
 
 function App() {
 
@@ -9,7 +9,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path = {INDEX} element = {<DifficultySelector />}/>
-        <Route path = {QUESTION_GAME_PARAMS} element = {<QuestionGame />} />
+        <Route path = {QUESTION_GAME_PARAMS} element = {<InitGame />} />
       </Routes>
     </BrowserRouter>
   )

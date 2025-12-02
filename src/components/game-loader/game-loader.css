@@ -1,0 +1,13 @@
+
+
+.loader_container {
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.loader_container p {
+    font-size: 24px;
+}
+

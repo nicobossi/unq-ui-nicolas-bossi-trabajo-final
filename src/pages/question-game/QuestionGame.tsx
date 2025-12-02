@@ -1,51 +1,25 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import getLevels from "../../services/get-levels/getLevels";
-import type { Level } from "../../types/Level";
-import QuestionContainer from "../../components/question-container/QuestionContainer";
-import OptionsList from "../../components/options-list/OptionsList";
-import './question-game.css'
-import CountContainer from "../../components/count-container/CountContainer";
-import { INDEX } from "../../routes";
-import { useNavigate } from "react-router-dom";
-import type { Answer } from "../../types/Answer";
-import postAnswer from "../../services/post-answer/postAnswer";
+import CountContainer from "../../components/count-container/CountContainer"
+import OptionsList from "../../components/options-list/OptionsList"
+import QuestionContainer from "../../components/question-container/QuestionContainer"
+import type { QuestionGameProperty } from "../../types/QuestionGameProperty";
+import useAnswers from "../../hooks/useAnswers";
 
-const QuestionGame = () => {
-    const { difficulty } = useParams();
-    const [levels, setLevels] = useState<Level[]>([]);
-    const [countResponse, setCountResponse] = useState<number>(0);
-    const navigate = useNavigate();
 
-    useEffect(() => {
-        const get = async () => setLevels(await getLevels(difficulty));
-        get();
-    }, []);
-
-    const handleAnswer = async (option : string) => {
-        const answer : Answer = await postAnswer(option, levels[countResponse].id);
-        console.log(answer);
-        
-        if(answer.isCorrect) {
-            setCountResponse(countResponse + 1);
-        }
-        else {
-            navigate(INDEX);
-        } 
-    }
-
-    if (levels.length === 0) {return <p>Cargando...</p>}
+const QuestionGame = ({levels} : QuestionGameProperty) => {
+    
+    const { counter, answerIntent, handleCounter } = useAnswers(levels);
 
     return (
         <section className = "question-game_container">
             <CountContainer 
-                currentCount = {countResponse} 
+                currentCount = {counter} 
                 total = {levels.length} />
             <QuestionContainer 
-                question = {levels[countResponse].question} />
+                question = {levels[counter].question} 
+                answer = {answerIntent} />
             <OptionsList 
-                options = {levels[countResponse].options} 
-                event = {handleAnswer} />
+                options = {levels[counter].options} 
+                event = {handleCounter} />
         </section>
     )
 }
