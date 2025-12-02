@@ -5,7 +5,7 @@
     place-items: center;
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(135deg, #FFD700, #FFB84D, #FFF1B0);
+    background: linear-gradient(135deg, #2c7f2f, #80ff84, #cbffce);
 }
 
 .win-game_container {
@@ -34,6 +34,6 @@
 
 @media screen and (max-width: 768px) {
     .win-game_container {
-        background: linear-gradient(135deg, #FFD700, #FFB84D, #FFF1B0);
+        background: linear-gradient(135deg, #55b558, #75ff79, #baffbd);
     }
 }

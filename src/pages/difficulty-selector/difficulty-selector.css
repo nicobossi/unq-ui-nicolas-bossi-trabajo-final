@@ -7,7 +7,6 @@
     align-items: center;
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(135deg, #FFD700, #FFB84D, #FFF1B0);
 }
 
 .difficulty-selector_container {
@@ -21,8 +20,14 @@
     box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
-.difficulty-selector_title-container {
-    align-self: center;
+.difficulty-selector_logo-container .main-logo_container {
+    display: grid;
+    place-items: center;
+    height: 100%;
+}
+
+.difficulty-selector_logo-container .main-logo_container img {
+    width: 82%;
 }
 
 .difficulty-selector_options {
@@ -31,7 +36,7 @@
     place-items: center;
     width: 90%;
     max-width: 400px;
-    height: 80%;
+    height: 70%;
     padding: 20px;
     border-radius: 16px;
     background-color: #FFF;

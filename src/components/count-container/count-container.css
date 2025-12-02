@@ -17,11 +17,3 @@
     font-size: 20px;
     font-family: 'Poppins', sans-serif;
 }
-
-@media screen and (min-width: 768px){
-    .count-container {
-        background: linear-gradient(135deg, #176fc8, #1E90FF, #87CEFA);
-
-    }
-    
-}
