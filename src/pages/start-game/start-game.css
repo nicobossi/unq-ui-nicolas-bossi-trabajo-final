@@ -20,11 +20,15 @@
     border-radius: 10px;
 }
 
-.counter_container {
+.counter-question_container {
     display: grid;
     place-items: center;
     width: 100%;
     height: 100%;
+}
+
+.counter-win_container {
+    display: none;
 }
 
 .game-form_container {
@@ -43,11 +47,19 @@
         height: 100%;
         border-radius: initial;
     }
-    .counter_container {
+    .counter-question_container {
         position: absolute;
         width: 94%;
         height: 10%;
-        top: 2%;
-        left: 100%;
+        top: 20px;
+        left: 420px;
+    }
+    .counter-win_container {
+        display: block;
+        position: absolute;
+        width: 94%;
+        height: 10%;
+        top: 28px;
+        right: 400px;
     }
 }
