@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import type { Answer } from "../types/Answer";
 import postAnswer from "../services/post-answer/postAnswer";
 import type { Level } from "../types/Level";
-import { LOSE_GAME, WIN_GAME } from "../routes";
+import { LOSE_GAME, WIN_GAME } from "../urls";
 import showError from "../utils/showError";
 
 

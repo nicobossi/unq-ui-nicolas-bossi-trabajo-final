@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import { INDEX, LOSE_GAME, QUESTION_GAME_PARAMS, WIN_GAME } from "./routes"
+import { INDEX, LOSE_GAME, QUESTION_GAME_PARAMS, WIN_GAME } from "./urls"
 import DifficultySelector from "./pages/difficulty-selector/DifficultySelector"
 import InitGame from "./pages/init-game/InitGame"
 import WinGame from "./pages/win-game/WinGame"

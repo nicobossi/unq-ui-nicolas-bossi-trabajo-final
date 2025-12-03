@@ -5,8 +5,8 @@ import './count-container.css'
 const CountContainer = ({currentCount, total} : CountContainerProperty) => {
     return (
         <div className = "count-container">
-            <p>Preguntas respondidas:</p>
-            <p>{currentCount} / {total}</p>
+            <p className = "count-container_title">Preguntas respondidas:</p>
+            <p className = "count-container_total">{currentCount} / {total}</p>
         </div>
     )
 }

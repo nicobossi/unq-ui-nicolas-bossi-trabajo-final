@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import getDifficulty from "../../services/get-difficulty/getDifficulty";
 import DifficultyButton from "../../components/difficulty-button/DifficultyButton";
 import './difficulty-selector.css';
-import { QUESTION_GAME } from "../../routes";
+import { QUESTION_GAME } from "../../urls";
 import { useNavigate } from "react-router-dom";
 import LogoContainer from "../../components/logo-container/LogoContainer";
 import showError from "../../utils/showError";
@@ -28,7 +28,8 @@ const DifficultySelector = () => {
                 <div className = "difficulty-selector_options">
                     {difficulties?.map(difficulty => 
                     <DifficultyButton 
-                        name = {difficulty} 
+                        key   = {difficulty}
+                        name  = {difficulty} 
                         event = {handleButton} />
                     )}
                 </div>

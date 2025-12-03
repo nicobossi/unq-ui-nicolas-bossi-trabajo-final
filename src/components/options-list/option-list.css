@@ -29,12 +29,11 @@
 }
 
 .option-list_container button:active {
-    transform: translateY(2px);
+    transform: translateY(1px);
 }
 
 @media screen and (min-width: 768px) {
     .option-list_container button {
         height: 80px;
     }
-
 }

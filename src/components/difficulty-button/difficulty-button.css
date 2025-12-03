@@ -29,3 +29,7 @@
     background: linear-gradient(135deg, #FFD700, #FFB84D, #FFF1B0);
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
+
+.difficulty-button_container:active {
+    transform: translateY(1px);
+}

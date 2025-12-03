@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { INDEX } from "../../routes";
+import { INDEX } from "../../urls";
 import './reintent-message.css'
 
 

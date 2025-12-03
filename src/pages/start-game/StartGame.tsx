@@ -11,8 +11,8 @@ const StartGame = ({levels} : QuestionGameProperty) => {
     const { counter, answer, handleCounter } = useAnswers(levels);
 
     return (
-        <section className = "question-game">
-            <div className = "question-game_container">
+        <main className = "question-game">
+            <section className = "question-game_container">
                 <div className = "counter_container">
                     <CountContainer 
                         currentCount = {counter} 
@@ -26,8 +26,8 @@ const StartGame = ({levels} : QuestionGameProperty) => {
                         options = {levels[counter].options} 
                         event = {handleCounter} />
                 </div>
-            </div>
-        </section>
+            </section>
+        </main>
     )
 }
 
