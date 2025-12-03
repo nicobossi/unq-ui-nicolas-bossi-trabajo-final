@@ -19,21 +19,25 @@
     background-color: #FFF;
 }
 
-.link-init_container {
+.win-title_container {
     display: grid;
     place-items: center;
     width: 100%;
-    height: 10%;
-    font-family: 'Poppins', sans-serif;
+    height: 120px;
+    background: linear-gradient(135deg, #2c7f2f, #80ff84, #cbffce);
 }
 
 .win-game_container h2 {
-    font-size: 24px;
-    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
 }
 
 @media screen and (max-width: 768px) {
+    
     .win-game_container {
         background: linear-gradient(135deg, #55b558, #75ff79, #baffbd);
+    }
+
+    .win-title_container {
+        background: initial;
     }
 }
