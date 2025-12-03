@@ -4,6 +4,7 @@ import getLevels from "../../services/get-levels/getLevels";
 import type { Level } from "../../types/Level";
 import GameLoader from "../../components/game-loader/GameLoader";
 import StartGame from "../start-game/StartGame";
+import showError from "../../utils/showError";
 
 const InitGame = () => {
     
@@ -12,7 +13,12 @@ const InitGame = () => {
 
     useEffect(() => {
         const get = async () => setLevels(await getLevels(difficulty));
-        get();
+        try {
+            get();
+        }
+        catch(error) {
+            showError(error);
+        }
     }, []);
 
     return (

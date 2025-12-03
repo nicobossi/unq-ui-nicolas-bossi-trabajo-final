@@ -5,6 +5,7 @@ import './difficulty-selector.css';
 import { QUESTION_GAME } from "../../routes";
 import { useNavigate } from "react-router-dom";
 import LogoContainer from "../../components/logo-container/LogoContainer";
+import showError from "../../utils/showError";
 
 
 const DifficultySelector = () => {
@@ -14,9 +15,13 @@ const DifficultySelector = () => {
 
     useEffect(() => {
         const get = async () => setDifficulties(await getDifficulty());
-        get();
-    }
-    , []);
+        try {
+            get();
+        }
+        catch(error) {
+            showError(error);
+        }
+    }, []);
 
     const handleButton = (level: string | undefined) => navigate(`${QUESTION_GAME}/${level}`);
 
