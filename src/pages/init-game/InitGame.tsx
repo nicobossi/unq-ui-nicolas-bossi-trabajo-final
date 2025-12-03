@@ -12,13 +12,9 @@ const InitGame = () => {
     const [levels, setLevels] = useState<Level[]>([]);
 
     useEffect(() => {
-        const get = async () => setLevels(await getLevels(difficulty));
-        try {
-            get();
-        }
-        catch(error) {
-            showError(error);
-        }
+        getLevels(difficulty)
+            .then(data => setLevels(data))
+            .catch(error => showError(error))
     }, []);
 
     return (

@@ -14,13 +14,9 @@ const DifficultySelector = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const get = async () => setDifficulties(await getDifficulty());
-        try {
-            get();
-        }
-        catch(error) {
-            showError(error);
-        }
+        getDifficulty()
+            .then(answer => setDifficulties(answer))
+            .catch((error) => showError(error))
     }, []);
 
     const handleButton = (level: string | undefined) => navigate(`${QUESTION_GAME}/${level}`);

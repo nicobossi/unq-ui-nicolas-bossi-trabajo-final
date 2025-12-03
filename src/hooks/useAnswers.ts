@@ -13,14 +13,10 @@ const useAnswers = (levels: Level[]) => {
     const [answer, setAnswer] = useState<string | null>(null);
     const navigate = useNavigate();
 
-    const post = async (option: string) : Promise<Answer | undefined> => {
-        try {
-            const answer : Answer = await postAnswer(option, levels[counter].id);
-            return answer;
-        }
-        catch(error) {
-            showError(error);
-        }   
+    const post = async (option: string) : Promise<Answer | void> => {
+        return postAnswer(option, levels[counter].id)
+            .then(data => data)
+            .catch(error => showError(error));
     } 
 
     const handleCounter = async (option : string) => {
