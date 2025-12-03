@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import type { Answer } from "../types/Answer";
 import postAnswer from "../services/post-answer/postAnswer";
 import type { Level } from "../types/Level";
-import { INDEX, WIN_GAME } from "../routes";
+import { LOSE_GAME, WIN_GAME } from "../routes";
 
 
 const useAnswers = (levels: Level[]) => {
@@ -31,7 +31,7 @@ const useAnswers = (levels: Level[]) => {
             setTimeout(() => {
                 setCounter(counter + 1);
                 setAnswer(null);
-            }, 1000);
+            }, 1500);
         }
         else {
             navigate(WIN_GAME);
@@ -40,8 +40,8 @@ const useAnswers = (levels: Level[]) => {
 
     const handleFail = () => {
         setTimeout(() => {
-            navigate(INDEX);
-        }, 1000);
+            navigate(LOSE_GAME);
+        }, 1500);
     }
 
     return {counter, answer, handleCounter}

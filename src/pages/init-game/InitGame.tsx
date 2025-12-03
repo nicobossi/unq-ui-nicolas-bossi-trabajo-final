@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import getLevels from "../../services/get-levels/getLevels";
 import type { Level } from "../../types/Level";
-import QuestionGame from "../question-game/QuestionGame";
 import GameLoader from "../../components/game-loader/GameLoader";
+import StartGame from "../start-game/StartGame";
 
 const InitGame = () => {
     
@@ -16,7 +16,7 @@ const InitGame = () => {
     }, []);
 
     return (
-        levels.length === 0 ? <GameLoader /> : <QuestionGame levels = {levels} /> 
+        levels.length === 0 ? <GameLoader /> : <StartGame levels = {levels} /> 
     )
 }
 

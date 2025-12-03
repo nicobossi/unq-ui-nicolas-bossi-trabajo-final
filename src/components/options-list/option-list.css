@@ -5,15 +5,15 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    gap: 12px;
     width: 90%;
-    height: 80%;
+    height: 40%;
     border-radius: 10px;
 }
 
 .option-list_container button {
     width: 100%;
     height: 40px;
-    font-family: 'Poppins', sans-serif;
     font-size: 20px;
     border-radius: 10px;
     border-style: none;
@@ -24,9 +24,17 @@
 
 .option-list_container button:hover {
     cursor: pointer;
+    background: linear-gradient(135deg, #FFD700, #FFB84D, #FFF1B0);
     transform: translateY(-4px);
 }
 
 .option-list_container button:active {
     transform: translateY(2px);
+}
+
+@media screen and (min-width: 768px) {
+    .option-list_container button {
+        height: 80px;
+    }
+
 }

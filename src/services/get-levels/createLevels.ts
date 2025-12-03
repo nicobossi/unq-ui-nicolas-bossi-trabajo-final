@@ -1,9 +1,9 @@
 import type { Level } from "../types/Level"
-import type { LevelAPI } from "../types/LevelAPI";
+import type { LevelRequest } from "../services/get-levels/LevelRequest";
 
 
-const createLevels = (levels: LevelAPI[]) : Level[] => {
-    const levelas = levels.map((level: LevelAPI) => {
+const createLevels = (levels: LevelRequest[]) : Level[] => {
+    const levels1 = levels.map((level: LevelRequest) => {
         return { 
             id: level.id,
             question: level.question, 
@@ -27,7 +27,7 @@ const createLevels = (levels: LevelAPI[]) : Level[] => {
             ]
         };
     });
-    return levelas;
+    return levels1;
 }
 
 export default createLevels;

@@ -1,6 +1,6 @@
 
 
-export type LevelAPI = {
+export type LevelResponse = {
     id: string, 
     question: string,
     option1: string,
