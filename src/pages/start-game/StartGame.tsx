@@ -3,10 +3,10 @@ import OptionsList from "../../components/options-list/OptionsList"
 import QuestionContainer from "../../components/question-container/QuestionContainer"
 import type { QuestionGameProperty } from "../../types/QuestionGameProperty";
 import useAnswers from "../../hooks/useAnswers";
-import './question-game.css'
+import './start-game.css'
 
 
-const QuestionGame = ({levels} : QuestionGameProperty) => {
+const StartGame = ({levels} : QuestionGameProperty) => {
     
     const { counter, answer, handleCounter } = useAnswers(levels);
 
@@ -31,4 +31,4 @@ const QuestionGame = ({levels} : QuestionGameProperty) => {
     )
 }
 
-export default QuestionGame;
+export default StartGame;

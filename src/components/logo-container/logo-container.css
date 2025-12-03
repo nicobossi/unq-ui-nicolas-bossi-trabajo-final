@@ -1,0 +1,11 @@
+
+
+.difficulty-selector_logo-container .main-logo_container {
+    display: grid;
+    place-items: center;
+    height: 100%;
+}
+
+.difficulty-selector_logo-container .main-logo_container img {
+    width: 82%;
+}

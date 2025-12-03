@@ -20,15 +20,6 @@
     box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
-.difficulty-selector_logo-container .main-logo_container {
-    display: grid;
-    place-items: center;
-    height: 100%;
-}
-
-.difficulty-selector_logo-container .main-logo_container img {
-    width: 82%;
-}
 
 .difficulty-selector_options {
     display: grid;

@@ -1,12 +1,11 @@
 import axios from "axios";
 import { GET_DIFFICULTY } from "../urls";
-import createDifficulties from "../../utils/createDifficulties";
-import type { Difficulties } from "../../types/Difficulties";
 
-const getDifficulty = async () : Promise<Difficulties> => {
+const getDifficulty = async () : Promise<string[]> => {
+    
     try {
-        const response = await axios.get(GET_DIFFICULTY);
-        return createDifficulties(response.data);
+        const response = await axios.get<string[]>(GET_DIFFICULTY);
+        return response.data;
     }
     catch(error) {
         return Promise.reject(error);

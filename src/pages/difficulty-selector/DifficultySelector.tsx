@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react";
 import getDifficulty from "../../services/get-difficulty/getDifficulty";
 import DifficultyButton from "../../components/difficulty-button/DifficultyButton";
-import type { Difficulties } from "../../types/Difficulties";
 import './difficulty-selector.css';
 import { QUESTION_GAME } from "../../routes";
 import { useNavigate } from "react-router-dom";
-import image from '../../assets/R.png'
+import LogoContainer from "../../components/logo-container/LogoContainer";
 
 
 const DifficultySelector = () => {
 
-    const [difficulties, setDifficulties] = useState<Difficulties | null>(null);
+    const [difficulties, setDifficulties] = useState<string[] | null>(null);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -19,23 +18,18 @@ const DifficultySelector = () => {
     }
     , []);
 
-    const handleDifficultySelector = (level: string | undefined) => {
-        navigate(`${QUESTION_GAME}/${level}`);
-    }
+    const handleButton = (level: string | undefined) => navigate(`${QUESTION_GAME}/${level}`);
 
     return (
         <section className = "difficulty-selector">
             <div className = "difficulty-selector_container">
-                <div className = "difficulty-selector_logo-container">
-                    <figure className = "main-logo_container">
-                        <img src = {image} alt="logo principal de preguntados" />
-                    </figure>
-                </div>
+                <LogoContainer />
                 <div className = "difficulty-selector_options">
-                    <DifficultyButton name = {difficulties?.option1} event = {handleDifficultySelector} />
-                    <DifficultyButton name = {difficulties?.option2} event = {handleDifficultySelector} />
-                    <DifficultyButton name = {difficulties?.option3} event = {handleDifficultySelector} />
-                    <DifficultyButton name = {difficulties?.option4} event = {handleDifficultySelector} />
+                    {difficulties?.map(difficulty => 
+                    <DifficultyButton 
+                        name = {difficulty} 
+                        event = {handleButton} />
+                    )}
                 </div>
             </div>
         </section>
