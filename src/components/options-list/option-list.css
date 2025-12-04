@@ -49,8 +49,6 @@
     background: var(--fail);
 }
 
-
-
 @media screen and (min-width: 768px) {
     .option-list_container button {
         height: 80px;

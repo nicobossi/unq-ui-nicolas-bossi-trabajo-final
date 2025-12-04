@@ -1,5 +1,5 @@
 import type { OptionsListProperty } from "../../types/OptionsListProperty";
-import type { Result } from "../../types/Result";
+import createOptionClassStyle from "../../utils/createOptionClassStyle";
 import './option-list.css'
 
 
@@ -9,7 +9,7 @@ const OptionsList = ({options, event, result} : OptionsListProperty) => {
         <section className = "option-list_container">
             {options.map(option => 
             <button 
-                className = {option.answerNumber === result?.option.answerNumber ? optionClass(result) : ""}
+                className = {createOptionClassStyle(option, result).buttonClass}
                 key = {option.answerNumber}
                 disabled = {result !== null}
                 onClick = {() => event(option)}>
@@ -18,7 +18,5 @@ const OptionsList = ({options, event, result} : OptionsListProperty) => {
         </section>
     );
 }
-
-const optionClass = (result : Result) => result.assert ? "correct-option" : "fail-option"
 
 export default OptionsList;
