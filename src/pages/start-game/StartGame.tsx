@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 import showError from "../../utils/showError";
 import type { Result } from "../../types/Result";
 import useCounterResults from "../../hooks/useCounterResults";
+import last from "../../utils/lastLevel";
 
 
 const StartGame = ({levels} : QuestionGameProperty) => {
@@ -20,7 +21,7 @@ const StartGame = ({levels} : QuestionGameProperty) => {
     const navigate = useNavigate();
 
     const handleAnswer = (option : string) => {
-        postAnswer(option, levels[totalCounter], levels[levels.length - 1])
+        postAnswer(option, levels[totalCounter], last(levels, levels.length))
             .then(result => {
                 setResult(result);
                 handleResults(result, () => navigate(WIN_GAME), () => setResult(null));

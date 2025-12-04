@@ -7,16 +7,16 @@ const useCounterResults = () => {
     const [assertsCounter, setAssertsCounter] = useState<number>(0);
 
     function handleResults(result : Result, end : () => void, reset : () => void) : void {
-        if (result.isLastQuestion) end();
-        else handleNext(result, reset);
+        setTimeout(() => {
+            if (result.isLastQuestion) end();
+            else handleNext(result, reset);
+        }, 1500);
     }
 
     function handleNext(result : Result, reset : () => void) {
-        setTimeout(() => {
-            if (result.assert) setAssertsCounter(previo => previo + 1);
-            setTotalCounter(previo => previo + 1);
-            reset();
-        }, 1500);
+        if (result.assert) setAssertsCounter(previo => previo + 1);
+        setTotalCounter(previo => previo + 1);
+        reset();
     }
 
     return {totalCounter, assertsCounter, handleResults}
