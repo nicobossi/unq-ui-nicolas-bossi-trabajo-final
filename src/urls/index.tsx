@@ -3,5 +3,5 @@
 export const INDEX : string = "/"
 export const QUESTION_GAME : string = "/questions"
 export const QUESTION_GAME_PARAMS : string = "/questions/:difficulty"
-export const END_GAME_PARAMS : string = "/end-game/:asserts";
+export const END_GAME_PARAMS : string = "/end-game/:asserts/:total";
 export const END_GAME : string = "/end-game";

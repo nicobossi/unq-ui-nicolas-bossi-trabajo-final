@@ -26,7 +26,7 @@ const StartGame = ({levels} : QuestionGameProperty) => {
                 setResult(result);
                 handleCounters(
                     result, 
-                    (asserts : number) => navigate(`${END_GAME}/${asserts}`), 
+                    (asserts : number, total : number) => navigate(`${END_GAME}/${asserts}/${total}`), 
                     () => setResult(null));
             })
             .catch(error => showError(error));

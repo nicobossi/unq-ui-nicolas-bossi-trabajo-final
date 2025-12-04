@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 
 const EndGame = () => {
 
-    const { asserts } = useParams();
+    const { asserts, total } = useParams();
 
     return (
         <section className = "end-game">
@@ -14,7 +14,12 @@ const EndGame = () => {
                     <h2>¡Felicidades, finalizaste la partida!</h2>
                 </div>
                 <div className = "end-text_container">
-                    <p>cantidad de aciertos: {asserts}</p>
+                    <p>Respuestas correctas: 
+                    <br /> {asserts} / {total}</p>
+                </div>
+                <div className = "end-text_container">
+                    <p>Respuestas incorrectas: 
+                    <br /> {Number(total) - Number(asserts)} / {total}</p>
                 </div>
                 <ReintentMessage />
             </div>
