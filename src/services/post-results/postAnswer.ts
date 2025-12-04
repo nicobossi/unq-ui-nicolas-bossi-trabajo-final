@@ -8,7 +8,7 @@ import createResult from "../../utils/createResult";
 import type { Level } from "../../types/Level";
 
 
-const postAnswer = async (option: string, currentLevel: Level, lastLevel : Level) : Promise<Result> => {
+const postResult = async (option: string, currentLevel: Level, lastLevel : Level) : Promise<Result> => {
     try {
         const response = await axios.post<AnswerResponse>(POST_ANSWER, createAnswerRequest(option, currentLevel.id));
         return createResult(createAnswer(response.data), lastLevel);
@@ -18,4 +18,4 @@ const postAnswer = async (option: string, currentLevel: Level, lastLevel : Level
     }
 }
 
-export default postAnswer;
+export default postResult;

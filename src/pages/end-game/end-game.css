@@ -40,17 +40,22 @@
 }
 
 .end-game_container--title h2 {
-    font-size: 28px;
+    padding: 0 10px 0 10px;
+    font-size: 24px;
     text-align: center;
 }
 
 .end-game_container p {
-    font-size: 24px;
+    font-size: 22px;
     text-align: center;
 }
 
 
 @media screen and (max-width: 768px) {
+
+    .end-game_container--title h2 {
+        padding: initial;
+    }
 
     .end-text_container {
         background: initial;

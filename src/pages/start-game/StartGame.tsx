@@ -5,13 +5,13 @@ import './start-game.css'
 import CountQuestionContainer from "../../components/count-question-container/CountQuestionContainer";
 import CountWinContainer from "../../components/count-win-container/CountWinContainer";
 import { useState } from "react";
-import postAnswer from "../../services/post-answer/postAnswer";
 import { useNavigate } from "react-router-dom";
 import showError from "../../utils/showError";
 import type { Result } from "../../types/Result";
 import useCounterResults from "../../hooks/useCounterResults";
 import last from "../../utils/lastLevel";
 import { END_GAME } from "../../urls";
+import postResult from "../../services/post-results/postAnswer";
 
 
 const StartGame = ({levels} : QuestionGameProperty) => {
@@ -21,7 +21,7 @@ const StartGame = ({levels} : QuestionGameProperty) => {
     const navigate = useNavigate();
 
     const handleAnswer = (option : string) => {
-        postAnswer(option, levels[totalCounter], last(levels, levels.length))
+        postResult(option, levels?.[totalCounter], last(levels, levels?.length))
             .then(result => {
                 setResult(result);
                 handleCounters(

@@ -3,7 +3,7 @@
 .link-init_container {
     display: grid;
     place-items: center;
-    gap: 10px;
+    gap: 5px;
     width: 100%;
     height: 10%;
     font-family: 'Poppins', sans-serif;

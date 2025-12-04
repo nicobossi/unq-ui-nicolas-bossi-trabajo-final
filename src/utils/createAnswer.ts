@@ -1,4 +1,4 @@
-import type { AnswerResponse } from "../services/post-answer/AnswerResponse";
+import type { AnswerResponse } from "../services/post-results/AnswerResponse";
 import type { Answer } from "../types/Answer";
 
 
