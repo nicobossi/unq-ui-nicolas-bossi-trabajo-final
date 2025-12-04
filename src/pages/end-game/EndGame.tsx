@@ -11,7 +11,7 @@ const EndGame = () => {
         <section className = "end-game">
             <div className = "end-game_container">
                 <div className = "end-game_container--title">
-                    <h2>¡Felicidades, finalizaste la partida!</h2>
+                    <h2>¡Finalizaste la partida!</h2>
                 </div>
                 <div className = "end-game_container--correct">
                     <p>Respuestas correctas: 

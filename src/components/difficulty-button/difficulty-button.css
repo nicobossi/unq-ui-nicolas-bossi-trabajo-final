@@ -26,7 +26,7 @@
 
 .difficulty-button_container:hover {
     transform: translateY(-4px);
-    background: linear-gradient(135deg, #FFD700, #FFB84D, #FFF1B0);
+    background: var(--translade);
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 

@@ -8,6 +8,11 @@
         #9C27B0,   
         #FF9800    
     );
+  --fail: linear-gradient(135deg, #cc2f2a, #fe8686, #ffadad);
+  --win: linear-gradient(135deg, #2c7f2f, #80ff84, #cbffce);
+  --translade: linear-gradient(135deg, #FFD700, #FFB84D, #FFF1B0);
+  --main-container-color: #FFF;
+  --main-button-color: #FFF;
 }
 
 * {

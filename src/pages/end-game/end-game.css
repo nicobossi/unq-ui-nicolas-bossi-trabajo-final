@@ -15,7 +15,7 @@
     width: 100%;
     height: 100%;
     max-width: 400px;
-    background-color: #FFF;
+    background-color: var(--main-container-color);
 }
 
 .end-game_container div {
@@ -32,11 +32,11 @@
 }
 
 .end-game_container .end-game_container--correct {
-    background: linear-gradient(135deg, #2c7f2f, #80ff84, #cbffce);
+    background: var(--win);
 }
 
 .end-game_container .end-game_container--fail {
-    background: linear-gradient(135deg, #cc2f2a, #fe8686, #ffadad);
+    background: var(--fail);
 }
 
 .end-game_container--title h2 {
@@ -52,6 +52,17 @@
 
 
 @media screen and (max-width: 768px) {
+
+    .end-game_container {
+        width: 90%;
+        height: 90%;
+        border-radius: 10px;
+    }
+
+    .end-game_container div {
+        width: 90%;
+        height: 100px;
+    }
 
     .end-game_container--title h2 {
         padding: initial;

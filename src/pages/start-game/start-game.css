@@ -16,7 +16,7 @@
     max-width: 400px;
     height: 160vw;
     max-height: 100vh;
-    background:#FFF;
+    background:var(--main-container-color);
     border-radius: 10px;
 }
 

@@ -5,7 +5,8 @@
     place-items: center;
     width: 90%;
     height: 30%;
-    background-color: #FFF;
+    padding: 0 10px 0 10px;
+    background-color: var(--main-container-color);
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
@@ -24,7 +25,7 @@
 }
 
 .question-container {
-    background-color: #FFF;
+    background-color: var(--main-container-color);
     background: initial;
 }
 
