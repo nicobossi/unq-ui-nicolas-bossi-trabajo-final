@@ -3,10 +3,10 @@ import './count-win-container.css'
 
 const CountWinContainer = ({currentCount, total} : CountContainerProperty) => {
     return (
-        <div className = "count-win-container">
-            <p className = "count-win-container_title">Preguntas correctas:</p>
+        <section className = "count-win-container">
+            <p className = "count-win-container_title">Respuestas correctas:</p>
             <p className = "count-win-container_total">{currentCount} / {total}</p>
-        </div>
+        </section>
     )
 }
 

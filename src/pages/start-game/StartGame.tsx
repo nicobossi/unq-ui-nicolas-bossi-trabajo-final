@@ -21,12 +21,12 @@ const StartGame = ({levels} : QuestionGameProperty) => {
     const navigate = useNavigate();
 
     const handleAnswer = (option : string) => {
-        postResult(option, levels?.[totalCounter], last(levels, levels?.length))
+        postResult(option, levels[totalCounter], last(levels, levels?.length))
             .then(result => {
                 setResult(result);
                 handleCounters(
                     result, 
-                    (asserts : number, total : number) => navigate(`${END_GAME}/${asserts}/${total}`), 
+                    (asserts : number) => navigate(`${END_GAME}/${asserts}/${levels.length}`), 
                     () => setResult(null));
             })
             .catch(error => showError(error));
@@ -51,7 +51,8 @@ const StartGame = ({levels} : QuestionGameProperty) => {
                         result = {result} />
                     <OptionsList 
                         options = {levels[totalCounter].options} 
-                        event = {handleAnswer} />
+                        event = {handleAnswer} 
+                        result = {result} />
                 </div>
             </section>
         </main>

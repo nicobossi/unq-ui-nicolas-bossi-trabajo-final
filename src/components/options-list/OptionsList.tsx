@@ -2,16 +2,17 @@ import type { OptionsListProperty } from "../../types/OptionsListProperty";
 import './option-list.css'
 
 
-const OptionsList = ({options, event} : OptionsListProperty) => {
+const OptionsList = ({options, event, result} : OptionsListProperty) => {
     return (
-        <div className = "option-list_container">
+        <section className = "option-list_container">
             {options.map(option => 
             <button 
                 key = {option.answerNumber}
+                disabled = {result !== null}
                 onClick = {() => event(option.answerNumber)}>
-                {option.answer}
+                    {option.answer}
             </button>)}
-        </div>
+        </section>
     );
 }
 

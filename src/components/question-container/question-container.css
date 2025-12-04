@@ -1,6 +1,6 @@
 
 
-.question-container {
+.question-container, .assert-container, .fail-container {
     display: grid;
     place-items: center;
     width: 90%;
@@ -13,14 +13,43 @@
 .question_content {
     text-align: center;
     font-size: 20px;
+    transition: opacity 0.1s ease, transform 0.5s ease;;
 }
 
-.answer_content {
-  font-size: 32px;
-  opacity: 0;
-  transition: opacity 0.5s ease;
+.assert, .fail {
+    text-align: center;
+    font-size: 28px;
+    opacity: 1;
+    transition: opacity 0.1s ease, transform 0.5s ease;
 }
 
-.active {
-  opacity: 1;
+.question-container {
+    background-color: #FFF;
+    background: initial;
+}
+
+.assert-container {
+    background: linear-gradient(135deg, #2c7f2f, #80ff84, #cbffce);
+}
+
+.fail-container {
+    background: linear-gradient(135deg, #cc2f2a, #fe8686, #ffadad);
+}
+
+.none_question, .none_answer {
+    position: absolute;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.1s ease;
+    transform: translateY(-10px);
+}
+
+.none_question {
+    text-align: center;
+    font-size: 20px;
+}
+
+.none_answer {
+    text-align: center;
+    font-size: 28px;
 }
