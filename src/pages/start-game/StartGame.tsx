@@ -6,17 +6,17 @@ import CountQuestionContainer from "../../components/count-question-container/Co
 import CountWinContainer from "../../components/count-win-container/CountWinContainer";
 import { useState } from "react";
 import postAnswer from "../../services/post-answer/postAnswer";
-import { WIN_GAME } from "../../urls";
 import { useNavigate } from "react-router-dom";
 import showError from "../../utils/showError";
 import type { Result } from "../../types/Result";
 import useCounterResults from "../../hooks/useCounterResults";
 import last from "../../utils/lastLevel";
+import { END_GAME } from "../../urls";
 
 
 const StartGame = ({levels} : QuestionGameProperty) => {
     
-    const {totalCounter, assertsCounter, handleResults} = useCounterResults();
+    const {totalCounter, assertsCounter, handleCounters} = useCounterResults();
     const [result, setResult] = useState<Result | null>(null);
     const navigate = useNavigate();
 
@@ -24,7 +24,10 @@ const StartGame = ({levels} : QuestionGameProperty) => {
         postAnswer(option, levels[totalCounter], last(levels, levels.length))
             .then(result => {
                 setResult(result);
-                handleResults(result, () => navigate(WIN_GAME), () => setResult(null));
+                handleCounters(
+                    result, 
+                    (asserts : number) => navigate(`${END_GAME}/${asserts}`), 
+                    () => setResult(null));
             })
             .catch(error => showError(error));
     }

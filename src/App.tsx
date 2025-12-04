@@ -1,9 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import { INDEX, LOSE_GAME, QUESTION_GAME_PARAMS, WIN_GAME } from "./urls"
+import { INDEX, QUESTION_GAME_PARAMS, END_GAME_PARAMS } from "./urls"
 import DifficultySelector from "./pages/difficulty-selector/DifficultySelector"
 import InitGame from "./pages/init-game/InitGame"
-import WinGame from "./pages/win-game/WinGame"
-import LoseGame from "./pages/lose-game/LoseGame"
+import EndGame from "./pages/end-game/EndGame"
 
 function App() {
 
@@ -12,8 +11,7 @@ function App() {
       <Routes>
         <Route path = {INDEX} element = {<DifficultySelector />}/>
         <Route path = {QUESTION_GAME_PARAMS} element = {<InitGame />} />
-        <Route path = {WIN_GAME} element = {<WinGame />} />
-        <Route path = {LOSE_GAME} element = {<LoseGame />} />
+        <Route path = {END_GAME_PARAMS} element = {<EndGame />} />
       </Routes>
     </BrowserRouter>
   )

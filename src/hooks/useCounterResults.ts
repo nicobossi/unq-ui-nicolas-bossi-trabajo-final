@@ -6,20 +6,16 @@ const useCounterResults = () => {
     const [totalCounter, setTotalCounter] = useState<number>(0);
     const [assertsCounter, setAssertsCounter] = useState<number>(0);
 
-    function handleResults(result : Result, end : () => void, reset : () => void) : void {
+    function handleCounters(result : Result, end : (asserts : number) => void, reset : () => void) : void {
         setTimeout(() => {
-            if (result.isLastQuestion) end();
-            else handleNext(result, reset);
+            if (result.assert) setAssertsCounter(previo => previo + 1);
+            if (result.isLastQuestion) end(result.assert ? assertsCounter + 1 : assertsCounter);
+            setTotalCounter(previo => previo + 1);
+            reset();
         }, 1500);
     }
 
-    function handleNext(result : Result, reset : () => void) {
-        if (result.assert) setAssertsCounter(previo => previo + 1);
-        setTotalCounter(previo => previo + 1);
-        reset();
-    }
-
-    return {totalCounter, assertsCounter, handleResults}
+    return {totalCounter, assertsCounter, handleCounters}
 }
 
 export default useCounterResults;
