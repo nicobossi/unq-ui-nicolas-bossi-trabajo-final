@@ -5,7 +5,6 @@
     place-items: center;
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(135deg, #2c7f2f, #80ff84, #cbffce);
 }
 
 .end-game_container {
@@ -19,30 +18,39 @@
     background-color: #FFF;
 }
 
-.end-text_container {
+.end-game_container div {
     display: grid;
     place-items: center;
-    width: 100%;
+    width: 90%;
     height: 120px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15), 0 12px 24px rgba(0,0,0,0.1);
+}
+
+.end-game_container .end-game_container--title {
+    background: initial
+}
+
+.end-game_container .end-game_container--correct {
     background: linear-gradient(135deg, #2c7f2f, #80ff84, #cbffce);
 }
 
-.end-text_container h2 {
+.end-game_container .end-game_container--fail {
+    background: linear-gradient(135deg, #cc2f2a, #fe8686, #ffadad);
+}
+
+.end-game_container--title h2 {
     font-size: 28px;
     text-align: center;
 }
 
-.end-text_container p {
+.end-game_container p {
     font-size: 24px;
     text-align: center;
 }
 
 
 @media screen and (max-width: 768px) {
-    
-    .end-game_container {
-        background: linear-gradient(135deg, #55b558, #75ff79, #baffbd);
-    }
 
     .end-text_container {
         background: initial;
