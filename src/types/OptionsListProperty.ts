@@ -4,6 +4,6 @@ import type { Result } from "./Result";
 
 export type OptionsListProperty = {
     options: Array<Option>,
-    event: (option: string) => void;
+    event: (option: Option) => void;
     result: Result | null
 } 

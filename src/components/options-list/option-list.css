@@ -30,7 +30,26 @@
 
 .option-list_container button:active {
     transform: translateY(1px);
+    background: initial;
 }
+
+.option-list_container .correct-option {
+    background: linear-gradient(135deg, #2c7f2f, #80ff84, #cbffce);
+}
+
+.option-list_container .fail-option {
+    background: linear-gradient(135deg, #cc2f2a, #fe8686, #ffadad);
+}
+
+.option-list_container .correct-option:hover {
+    background: linear-gradient(135deg, #2c7f2f, #80ff84, #cbffce);
+}
+
+.option-list_container .fail-option:hover {
+    background: linear-gradient(135deg, #cc2f2a, #fe8686, #ffadad);
+}
+
+
 
 @media screen and (min-width: 768px) {
     .option-list_container button {

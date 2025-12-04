@@ -1,5 +1,4 @@
 import OptionsList from "../../components/options-list/OptionsList"
-import QuestionContainer from "../../components/question-container/QuestionContainer"
 import type { QuestionGameProperty } from "../../types/QuestionGameProperty";
 import './start-game.css'
 import CountQuestionContainer from "../../components/count-question-container/CountQuestionContainer";
@@ -12,6 +11,8 @@ import useCounterResults from "../../hooks/useCounterResults";
 import last from "../../utils/lastLevel";
 import { END_GAME } from "../../urls";
 import postResult from "../../services/post-results/postAnswer";
+import type { Option } from "../../types/Option";
+import ResultContainer from "../../components/result-container/ResultContainer";
 
 
 const StartGame = ({levels} : QuestionGameProperty) => {
@@ -20,8 +21,8 @@ const StartGame = ({levels} : QuestionGameProperty) => {
     const [result, setResult] = useState<Result | null>(null);
     const navigate = useNavigate();
 
-    const handleAnswer = (option : string) => {
-        postResult(option, levels[totalCounter], last(levels, levels?.length))
+    const handleAnswer = (option : Option) => {
+        postResult(option, levels[totalCounter], last(levels, levels.length))
             .then(result => {
                 setResult(result);
                 handleCounters(
@@ -46,7 +47,7 @@ const StartGame = ({levels} : QuestionGameProperty) => {
                         total = {levels.length} />
                 </div>
                 <div className = "game-form_container">
-                    <QuestionContainer 
+                    <ResultContainer 
                         question = {levels[totalCounter].question} 
                         result = {result} />
                     <OptionsList 
