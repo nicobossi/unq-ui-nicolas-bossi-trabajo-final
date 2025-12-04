@@ -2,18 +2,30 @@ import OptionsList from "../../components/options-list/OptionsList"
 import QuestionContainer from "../../components/question-container/QuestionContainer"
 import type { QuestionGameProperty } from "../../types/QuestionGameProperty";
 import './start-game.css'
-import useAnswers3 from "../../hooks/useAnswers3";
 import CountQuestionContainer from "../../components/count-question-container/CountQuestionContainer";
 import CountWinContainer from "../../components/count-win-container/CountWinContainer";
+import { useState } from "react";
+import postAnswer from "../../services/post-answer/postAnswer";
+import { WIN_GAME } from "../../urls";
+import { useNavigate } from "react-router-dom";
+import showError from "../../utils/showError";
+import type { Result } from "../../types/Result";
+import useCounterResults from "../../hooks/useCounterResults";
 
 
 const StartGame = ({levels} : QuestionGameProperty) => {
     
-   const {currentAnswer, winCounter, currentQuestion, handleAnswer, handleNextQuestion} = useAnswers3(levels);
+    const {totalCounter, assertsCounter, handleResults} = useCounterResults();
+    const [result, setResult] = useState<Result | null>(null);
+    const navigate = useNavigate();
 
-    const handleSubmit = (option : string) => {
-        handleAnswer(option);
-        handleNextQuestion();
+    const handleAnswer = (option : string) => {
+        postAnswer(option, levels[totalCounter], levels[levels.length - 1])
+            .then(result => {
+                setResult(result);
+                handleResults(result, () => navigate(WIN_GAME), () => setResult(null));
+            })
+            .catch(error => showError(error));
     }
 
     return (
@@ -21,21 +33,21 @@ const StartGame = ({levels} : QuestionGameProperty) => {
             <section className = "question-game_container">
                 <div className = "counter-question_container">
                     <CountQuestionContainer 
-                        currentCount = {currentQuestion} 
+                        currentCount = {totalCounter} 
                         total = {levels.length} />
                 </div>
                 <div className = "counter-win_container">
                     <CountWinContainer 
-                        currentCount = {winCounter} 
+                        currentCount = {assertsCounter} 
                         total = {levels.length} />
                 </div>
                 <div className = "game-form_container">
                     <QuestionContainer 
-                        question = {levels[currentQuestion].question} 
-                        answer = {currentAnswer} />
+                        question = {levels[totalCounter].question} 
+                        result = {result} />
                     <OptionsList 
-                        options = {levels[currentQuestion].options} 
-                        event = {handleSubmit} />
+                        options = {levels[totalCounter].options} 
+                        event = {handleAnswer} />
                 </div>
             </section>
         </main>

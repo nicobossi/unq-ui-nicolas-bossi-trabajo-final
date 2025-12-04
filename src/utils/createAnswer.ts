@@ -2,10 +2,10 @@ import type { AnswerResponse } from "../services/post-answer/AnswerResponse";
 import type { Answer } from "../types/Answer";
 
 
-const createAnswer = (answerAPI: AnswerResponse) : Answer => {
+const createAnswer = (answerResponse : AnswerResponse) : Answer => {
     return {
-        isCorrect: answerAPI.answer,
-        id: answerAPI.id
+        isCorrect: answerResponse.answer,
+        id: answerResponse.questionId
     }
 
 }

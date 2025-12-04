@@ -55,11 +55,12 @@
         left: 420px;
     }
     .counter-win_container {
-        display: block;
+        display: grid;
+        place-items: center;
         position: absolute;
         width: 94%;
         height: 10%;
-        top: 28px;
-        right: 400px;
+        top: 20px;
+        right: 420px;
     }
 }

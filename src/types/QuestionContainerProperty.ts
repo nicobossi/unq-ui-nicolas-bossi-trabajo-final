@@ -1,6 +1,7 @@
+import type { Result } from "./Result";
 
 
 export type QuestionContainerProperty = {
     question: string;
-    answer: string | null
+    result: Result | null;
 }
