@@ -5,7 +5,6 @@ import CountQuestionContainer from "../../components/count-question-container/Co
 import CountWinContainer from "../../components/count-win-container/CountWinContainer";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import showError from "../../utils/showError";
 import type { Result } from "../../types/Result";
 import useCounterResults from "../../hooks/useCounterResults";
 import last from "../../utils/lastLevel";
@@ -13,10 +12,12 @@ import { END_GAME } from "../../urls";
 import postResult from "../../services/post-results/postAnswer";
 import type { Option } from "../../types/Option";
 import ResultContainer from "../../components/result-container/ResultContainer";
+import ErrorContainer from "../../components/error-container/ErrorContainer";
 
 
 const StartGame = ({levels} : QuestionGameProperty) => {
     
+    const [error, setError] = useState<boolean>(false);
     const {totalCounter, assertsCounter, handleCounters} = useCounterResults();
     const [result, setResult] = useState<Result | null>(null);
     const navigate = useNavigate();
@@ -30,8 +31,10 @@ const StartGame = ({levels} : QuestionGameProperty) => {
                     (asserts : number) => navigate(`${END_GAME}/${asserts}/${levels.length}`), 
                     () => setResult(null));
             })
-            .catch(error => showError(error));
+            .catch(() => setError(true));
     }
+
+    if (error) return <ErrorContainer message = "Hubo un problema para cargar la respuesta" event ={() => setError(false)}/>
 
     return (
         <main className = "question-game">

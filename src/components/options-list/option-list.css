@@ -30,7 +30,6 @@
 
 .option-list_container button:active {
     transform: translateY(1px);
-    background: initial;
 }
 
 .option-list_container .correct-option {

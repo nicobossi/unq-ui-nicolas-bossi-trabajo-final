@@ -1,0 +1,68 @@
+
+
+.error {
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.error .error_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    background-color: var(--main-container-color);
+}
+
+.error_container .error_container_messages {
+    display: grid;
+    place-items: center;
+    width: 90%;
+    height: 100px;
+    text-align: center;
+    background: var(--fail);
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15), 0 12px 24px rgba(0,0,0,0.1);
+}
+
+.error_container .error_container_button-conteiner {
+    display: grid;
+    place-items: center;
+    width: 90%;
+    height: 100px;
+    text-align: center;
+    background: var(--translade);
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15), 0 12px 24px rgba(0,0,0,0.1);
+
+}
+.error_container .error_container_button-conteiner button {
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    border-style: none;
+    text-align: center;
+    background: none;
+}
+
+.error_container p {
+    font-size: 20px;
+    text-align: center;
+}
+
+.error_container .error_container_button-conteiner button:hover {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .error .error_container {
+        width: 90%;
+        height: 90%;
+        border-radius: 10px;
+    }
+}

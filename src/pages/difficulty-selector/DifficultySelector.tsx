@@ -5,21 +5,24 @@ import './difficulty-selector.css';
 import { QUESTION_GAME } from "../../urls";
 import { useNavigate } from "react-router-dom";
 import LogoContainer from "../../components/logo-container/LogoContainer";
-import showError from "../../utils/showError";
+import ErrorContainer from "../../components/error-container/ErrorContainer";
 
 
 const DifficultySelector = () => {
 
+    const [error, setError] = useState<boolean>(false);
     const [difficulties, setDifficulties] = useState<string[] | null>(null);
     const navigate = useNavigate();
 
     useEffect(() => {
         getDifficulty()
             .then(difficultiesData => setDifficulties(difficultiesData))
-            .catch(error => showError(error))
-    }, []);
+            .catch(() => setError(true))
+    }, [error]);
 
     const handleButton = (level: string | undefined) => navigate(`${QUESTION_GAME}/${level}`);
+
+    if (error) return <ErrorContainer message = "No se pudieron cargar las dificultades" event = {() => setError(false)} />
 
     return (
         <section className = "difficulty-selector">
