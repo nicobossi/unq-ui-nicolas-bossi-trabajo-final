@@ -16,7 +16,7 @@
 1. Instalar **Node.js**.
 2. Ejecutar el comando <strong>`npm install`</strong> para agregar todas las dependencias necesarias del proyecto.
 3. Ejecutar el comando <strong>`npm run dev`</strong> para correr el proyecto de forma local (en modo de desarrollo).
-4. Posicionar el mouse sobre el puerto provisto por Vite en la terminal y ejecutar el atajo **ctrl + click** para usar la aplicación en algún navegador.
+4. Posicionar el mouse sobre el puerto provisto por Vite en la terminal y ejecutar el atajo <strong>`ctrl + click`</strong> para usar la aplicación en algún navegador.
 
 ### Funcionalidades implementadas
 
