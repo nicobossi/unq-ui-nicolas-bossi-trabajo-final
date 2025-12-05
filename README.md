@@ -1,6 +1,6 @@
 # Preguntas y Respuestas
 
-## Trabajo Final Integrador para la Materia Construcción de Interafaces de Usuario
+## Trabajo Final Integrador para la Materia Construcción de Interfaces de Usuario
 
 ### ¿Cómo descargar el proyecto?
 
@@ -21,7 +21,7 @@
 
 - Selector de dificultades.
 - Interfaz para cada pregunta con sus respectivas opciones.
-- Marcador de respuesta Correcta o Incorrecta.
+- Marcador de respuesta Correcta e Incorrecta.
 - Contador de preguntas respondidas.
 - Contador de respuestas correctas.
 - Interfaz de partida finalizada.
