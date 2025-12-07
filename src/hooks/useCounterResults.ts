@@ -10,7 +10,7 @@ const useCounterResults = () => {
         setTimeout(() => {
             if (result.assert) setAssertsCounter(previo => previo + 1);
             if (result.isLastQuestion) end(result.assert ? assertsCounter + 1 : assertsCounter);
-            setTotalCounter(previo => previo + 1);
+            if (!result.isLastQuestion) setTotalCounter(previo => previo + 1);
             reset();
         }, 1500);
     }

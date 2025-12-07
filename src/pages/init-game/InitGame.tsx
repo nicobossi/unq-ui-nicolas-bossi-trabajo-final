@@ -1,27 +1,29 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import getLevels from "../../services/get-levels/getLevels";
-import type { Level } from "../../types/Level";
-import GameLoader from "../../components/game-loader/GameLoader";
-import StartGame from "../start-game/StartGame";
 import ErrorContainer from "../../components/error-container/ErrorContainer";
+import useDataResult from "../../hooks/useDataResult";
+import getDifficulty from "../../services/get-difficulty/getDifficulty";
+import GameLoader from "../../components/game-loader/GameLoader";
+import DifficultySelector from "../../components/difficulty-selector/DifficultySelector";
 
 
 const InitGame = () => {
-    
-    const [error, setError] = useState<boolean>(false);
-    const { difficulty } = useParams();
-    const [levels, setLevels] = useState<Level[]>([]);
+
+    const {isError, setIsError, isLoading, handleResult, handleError} = useDataResult();
+    const [difficulties, setDifficulties] = useState<string[] | null>(null);
 
     useEffect(() => {
-        getLevels(difficulty)
-            .then(data => setLevels(data))
-            .catch(() => setError(true));
-    }, [difficulty, error]);
-
-    if (error) return <ErrorContainer message = "No se pudieron cargar las preguntas" event = {() => setError(false)} />
-
-    return levels.length === 0 ? <GameLoader /> : <StartGame levels = {levels} /> 
+        getDifficulty()
+            .then(difficultiesData => handleResult(() => setDifficulties(difficultiesData)))
+            .catch(() => handleError())
+    }, [isError]);
+    
+    return (
+        <>
+            {isLoading && <GameLoader />}
+            {isError && <ErrorContainer message = "No se pudieron cargar las dificultades" event = {() => setIsError(false)} />}
+            {difficulties && <DifficultySelector difficulties = {difficulties} />}
+        </>
+    )
 }
 
 export default InitGame;
